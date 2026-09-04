@@ -1,5 +1,5 @@
 import { PROTO_PATHS } from "@cinema-platform/contracts";
-import { type AuthServiceClient } from "@cinema-platform/contracts/gen/auth";
+import { type AuthServiceClient } from "@cinema-platform/contracts/gen/ts/auth";
 import { credentials, loadPackageDefinition } from "@grpc/grpc-js";
 import { loadSync } from "@grpc/proto-loader";
 

@@ -1,7 +1,7 @@
 import {
 	TelegramCompleteRequest,
 	TelegramCompleteResponse,
-} from "@cinema-platform/contracts/gen/auth";
+} from "@cinema-platform/contracts/gen/ts/auth";
 import type { Telegraf } from "telegraf";
 
 import { authClient } from "@/infrastructure/grpc/auth.client";
