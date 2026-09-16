@@ -35,7 +35,7 @@ export function registerContactHandler(bot: Telegraf<TelegrafContext>) {
 						[
 							{
 								text: "Return to website",
-								url: `https://cinema-platform.com/auth/tg-finalize?sessionId=${sessionId}`,
+								url: `https://cinema-platform.site/auth/tg-finalize?sessionId=${sessionId}`,
 							},
 						],
 					],

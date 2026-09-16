@@ -13,7 +13,7 @@ export function registerStartHandler(bot: Telegraf<TelegrafContext>) {
 					[
 						Markup.button.url(
 							"Go to login",
-							"https://cinema-platform.com/auth/login",
+							"https://cinema-platform.site/auth/login",
 						),
 					],
 				]),
