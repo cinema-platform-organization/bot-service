@@ -1,12 +1,15 @@
 import { Markup, Telegraf } from "telegraf";
 
 import type { TelegrafContext } from "@/shared/interfaces";
+import { logger } from "@/shared/logger";
 
 export function registerStartHandler(bot: Telegraf<TelegrafContext>) {
 	bot.start(async ctx => {
 		const sessionId = ctx.startPayload;
 
 		if (!sessionId) {
+			logger.debug({ chatId: ctx.chat.id }, "/start without session");
+
 			return ctx.reply(
 				"Hello! To continue, please log in on the site",
 				Markup.inlineKeyboard([
@@ -21,6 +24,8 @@ export function registerStartHandler(bot: Telegraf<TelegrafContext>) {
 		}
 
 		ctx.session.id = sessionId;
+
+		logger.info({ chatId: ctx.chat.id }, "Telegram login started");
 
 		await ctx.reply(
 			"To complete registration, please send your phone number",
