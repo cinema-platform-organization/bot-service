@@ -1,11 +1,11 @@
 import pino from "pino";
 
-const isProd = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const logger = pino({
-	level: process.env.LOG_LEVEL ?? (isProd ? "info" : "debug"),
+	level: process.env.LOG_LEVEL ?? (isProduction ? "info" : "debug"),
 	base: { service: "bot-service" },
-	transport: isProd
+	transport: isProduction
 		? undefined
 		: { target: "pino-pretty", options: { singleLine: true } },
 });
